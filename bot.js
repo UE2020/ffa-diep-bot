@@ -115,4 +115,4 @@ class Bot {
 }
 
 // initialize bot(s)
-new Bot('http://diep.io/#269696A700E2FA930529');
+new Bot('https://diep.io');
