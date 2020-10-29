@@ -18,7 +18,7 @@ class Bot {
         // set user agent to make sure that diep.io isn't sus.
         await this.page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
         await this.page.goto(url);
-        this.page.setViewport({ width: 320, height: 320, deviceScaleFactor: 0.25 });
+        this.page.setViewport({ width: 320, height: 320, deviceScaleFactor: 0.5 });
 
         // level up
         this.page.keyboard.down('KeyK');
@@ -41,7 +41,7 @@ class Bot {
 
     // mainloop
     async update(self) {
-        let screenData = await self.page.screenshot();
+        let screenData = await self.page.screenshot({path: "image.png"});
         await self.page.keyboard.press('Backslash');
         let imageParser = new ImageParser(screenData);
         self.page.mouse.down();
