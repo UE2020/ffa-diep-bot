@@ -10,7 +10,7 @@ The bot only functions properly in ffa-like gamemodes, such as sandbox, maze, an
 
 # Usage
 
-Run `npm install` to install all the dependencies. If you get any errors, try deleting package-lock.json. To use the bot, run `node bot.js`. In order to watch the bot, you must set up the client. Run `pip install pygame` to install dependencies, and then run `python client.py` to execute the client.
+Run `npm install` to install all the bot dependencies. If you get any errors, try deleting package-lock.json. To use the bot, run `node bot.js`. To watch the bot, you must set up the client. Run `pip install pygame` to install the bot client dependencies, and run `python client.py` to execute the client.
 
 # Screenshots
 
