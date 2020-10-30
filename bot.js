@@ -70,7 +70,7 @@ class Bot {
             self.page.mouse.move(matches[0][0], matches[0][1]);
             
         } else {
-            let squares = imageParser.getEveryPixelWithColor('#FFE869');
+            let squares = imageParser.getEveryPixelWithColor('#FFE869', '#768DFC', '#FC7677');
             if (squares.length === 0) return;
             squares.sort(function (a, b) {
                 let aDistance = botutil.distance(a, [imageParser.width/2, imageParser.width/2]);
@@ -91,11 +91,11 @@ class Bot {
             self.page.mouse.move(squares[0][0], squares[0][1]);
         }
 
-        //matches = imageParser.getEveryPixelWithColor('#94FAF6');
-        //if (matches.length != 0) {
-        //    await self.page.mouse.up();
-         //   await self.page.mouse.click(matches[0][0], matches[0][1]);
-        //}
+        matches = imageParser.getEveryPixelWithColor('#94FAF6');
+        if (matches.length != 0) {
+            await self.page.mouse.up();
+            await self.page.mouse.click(matches[0][0], matches[0][1]);
+        }
     }
 
     // set the movement of the bot

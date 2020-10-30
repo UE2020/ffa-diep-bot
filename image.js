@@ -25,15 +25,18 @@ module.exports = class {
     }
 
     // useful for finding certain shapes, and scouting for players
-    getEveryPixelWithColor(hex) {
+    getEveryPixelWithColor(...hex) {
         // make it lowercase
-        hex = hex.toLowerCase();
+        hex = hex.map(function(value) {
+            return value.toLowerCase();
+        });
+
         // add every instance of the hex to matches and return matches
         let matches = [];
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
                 let color = this.getColorAtPoint(x, y);
-                if (color === hex) matches.push([x, y]);
+                if (hex.includes(color)) matches.push([x, y]);
             }
         }
         return matches;
